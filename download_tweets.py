@@ -2,12 +2,13 @@ import tweepy
 import requests
 import time
 import csv
+from decouple import config
 
 # these should be read from env variables
-consumer_key = ""
-consumer_secret = ""
-access_key = ""
-access_secret = ""
+consumer_key = config('CONSUMERAPI')
+consumer_secret = config('CONSUMERSECRET')
+access_key = config('ACCESSTOKEN')
+access_secret = config('ACCESSSECRET')
 
 # Download all the tweets of a twitter user
 def get_all_tweets(screen_name):
@@ -42,4 +43,4 @@ def read_user_tweets(username):
 
 if __name__ == '__main__':
 	#pass in the username of the account you want to download
-	get_all_tweets("J_tsar")
+	#get_all_tweets("jack")
